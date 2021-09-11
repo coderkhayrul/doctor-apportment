@@ -82,7 +82,9 @@ class DoctorController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::find($id);
+        $roles = Role::get();
+        return view('admin.doctor.edit', compact('user', 'roles'));
     }
 
     /**
@@ -94,7 +96,37 @@ class DoctorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::find($id);
+
+        if ($request->hasFile('image')) {
+            unlink(public_path('/upload') . '/' . $user->image);
+            $image = $request->file('image');
+            $image_name = $image->hashName();
+            $image_location = public_path('/upload');
+            $image->move($image_location, $image_name);
+        } else {
+            $image_name = $user->image;
+        }
+
+        if ($request->password) {
+            $user->password = bcrypt($request->password);
+        } else {
+            $user->password = $user->password;
+        }
+
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->role_id = $request->role_id;
+        $user->address = $request->address;
+        $user->phone_number = $request->phone_number;
+        $user->department = $request->department;
+        $user->education = $request->education;
+        $user->gender = $request->gender;
+        $user->description = $request->description;
+        $user->image = $image_name;
+        $user->update();
+
+        return redirect()->route('doctor.index')->with('message', 'Doctor Update Successfully');
     }
 
     /**
