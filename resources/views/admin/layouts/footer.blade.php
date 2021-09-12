@@ -132,8 +132,6 @@
 
 
 
-
-
 @yield('custrom_script')
 </body>
 

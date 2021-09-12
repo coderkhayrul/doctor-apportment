@@ -31,13 +31,17 @@
             Choose Date
         </div>
         <div class="card-body">
-            <input class="form-control" type="date" name="date" id="date">
+            {{-- <input class="form-control" type="date" name="date" id="date"> --}}
+            <input type="text" class="form-control datetimepicker-input" id="datepicker" data-toggle="datetimepicker" data-target="#datepicker">
         </div>
     </div>
     <!-- Doctor Apportment Date AM -->
     <div class="card">
         <div class="card-header">
             Choose AM Time
+            <span>
+                <input type="checkbox" id="select_all">
+            </span>
         </div>
         <div class="card-body">
             <table class="table table-striped">
@@ -46,21 +50,21 @@
                         <th scope="row">1</th>
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="6am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="6am">
                                 <label class="border-checkbox-label" for="checkbox1">6am</label>
                             </div>
                         </td>
 
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="6.20am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="6.20am">
                                 <label class="border-checkbox-label" for="checkbox1">6.20am</label>
                             </div>
                         </td>
 
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="6.40am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="6.40am">
                                 <label class="border-checkbox-label" for="checkbox1">6.40am</label>
                             </div>
                         </td>
@@ -70,21 +74,21 @@
                         <th scope="row">2</th>
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="7am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="7am">
                                 <label class="border-checkbox-label" for="checkbox1">7am</label>
                             </div>
                         </td>
 
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="7.20am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="7.20am">
                                 <label class="border-checkbox-label" for="checkbox1">7.20am</label>
                             </div>
                         </td>
 
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="7.40am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="7.40am">
                                 <label class="border-checkbox-label" for="checkbox1">7.40am</label>
                             </div>
                         </td>
@@ -94,21 +98,21 @@
                         <th scope="row">3</th>
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="8am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="8am">
                                 <label class="border-checkbox-label" for="checkbox1">8am</label>
                             </div>
                         </td>
 
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="8.20am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="8.20am">
                                 <label class="border-checkbox-label" for="checkbox1">8.20am</label>
                             </div>
                         </td>
 
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="8.40am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="8.40am">
                                 <label class="border-checkbox-label" for="checkbox1">8.40am</label>
                             </div>
                         </td>
@@ -118,21 +122,21 @@
                         <th scope="row">4</th>
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="9am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="9am">
                                 <label class="border-checkbox-label" for="checkbox1">9am</label>
                             </div>
                         </td>
 
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="9.20am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="9.20am">
                                 <label class="border-checkbox-label" for="checkbox1">9.20am</label>
                             </div>
                         </td>
 
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="9.40am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="9.40am">
                                 <label class="border-checkbox-label" for="checkbox1">9.40am</label>
                             </div>
                         </td>
@@ -142,21 +146,21 @@
                         <th scope="row">5</th>
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="10am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="10am">
                                 <label class="border-checkbox-label" for="checkbox1">10am</label>
                             </div>
                         </td>
 
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="10.20am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="10.20am">
                                 <label class="border-checkbox-label" for="checkbox1">10.20am</label>
                             </div>
                         </td>
 
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="10.40am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="10.40am">
                                 <label class="border-checkbox-label" for="checkbox1">10.40am</label>
                             </div>
                         </td>
@@ -166,21 +170,21 @@
                         <th scope="row">6</th>
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="11am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="11am">
                                 <label class="border-checkbox-label" for="checkbox1">11am</label>
                             </div>
                         </td>
 
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="11.20am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="11.20am">
                                 <label class="border-checkbox-label" for="checkbox1">11.20am</label>
                             </div>
                         </td>
 
                         <td>
                             <div class="border-checkbox-group border-checkbox-group-primary">
-                                <input class="border-checkbox" type="checkbox" id="time[]" value="11.40am">
+                                <input class="border-checkbox" type="checkbox" name="time[]" id="time" value="11.40am">
                                 <label class="border-checkbox-label" for="checkbox1">11.40am</label>
                             </div>
                         </td>
@@ -418,5 +422,37 @@
             </table>
         </div>
     </div>
+    <div class="card">
+        <div class="card-body">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
 </div>
+@endsection
+@section('custrom_style')
+<style type="text/css">
+    input[type="checkbox"]{
+        zoom: 1.5;
+    }
+    body{
+        font-size: 20px;
+    }
+</style>
+@endsection
+@section('custrom_script')
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#datepicker').datetimepicker({format: 'YYYY-MM-DD'});
+        });
+
+        // All Time Selector Function
+        $(document).ready(function() {
+            $('#select_all').click(function() {
+                var checked = this.checked;
+                $('input[type="checkbox"]').each(function() {
+                this.checked = checked;
+            });
+            })
+        });
+    </script>
 @endsection
