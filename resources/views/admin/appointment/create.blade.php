@@ -39,7 +39,7 @@
     <div class="card">
         <div class="card-header">
             Choose AM Time
-            <span>
+            <span style="margin-left: 700px">Select All
                 <input type="checkbox" id="select_all">
             </span>
         </div>
@@ -432,7 +432,7 @@
 @section('custrom_style')
 <style type="text/css">
     input[type="checkbox"]{
-        zoom: 1.5;
+        zoom: 1;
     }
     body{
         font-size: 20px;
