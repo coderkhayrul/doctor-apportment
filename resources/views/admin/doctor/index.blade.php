@@ -30,9 +30,9 @@
 <div class="row justify-content-center">
     <div class="col-md-10">
         @if (Session::has('message'))
-            <div class="alert alert-success" role="alert">
-                {{ Session::get('message') }}
-            </div>
+        <div class="alert alert-success" role="alert">
+            {{ Session::get('message') }}
+        </div>
         @endif
         <div class="card">
             <div class="card-header">
@@ -67,7 +67,7 @@
                                     <a href="#" data-toggle="modal" data-target="#exampleModalCenter{{ $user->id }}">
                                         <i class="ik ik-eye"></i></a>
                                     <a href="{{ route('doctor.edit', $user->id) }}"><i class="ik ik-edit-2"></i></a>
-                                    <a href="#"><i class="ik ik-trash-2"></i></a>
+                                    <a href="{{ route('doctor.show', $user->id) }}"><i class="ik ik-trash-2"></i></a>
                                 </div>
                             </td>
                         </tr>

@@ -6,6 +6,7 @@ use App\Http\Requests\DoctorRequest;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DoctorController extends Controller
 {
@@ -41,10 +42,11 @@ class DoctorController extends Controller
      */
     public function store(DoctorRequest $request)
     {
-        $image = $request->file('image');
-        $image_name = $image->hashName();
-        $image_location = public_path('/upload');
-        $image->move($image_location, $image_name);
+        // $image = $request->file('image');
+        // $image_name = $image->hashName();
+        // $image_location = public_path('/upload');
+        // $image->move($image_location, $image_name);
+        $image_name = (new User)->userAvatar($request);
 
         $doctor = new User();
         $doctor->name = $request->name;
@@ -71,7 +73,12 @@ class DoctorController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+        unlink(public_path('/upload') . '/' . $user->image);
+        $user->delete();
+        // abort(401);
+
+        return back()->with('message', 'Doctor Delete Successfully');
     }
 
     /**
@@ -100,10 +107,11 @@ class DoctorController extends Controller
 
         if ($request->hasFile('image')) {
             unlink(public_path('/upload') . '/' . $user->image);
-            $image = $request->file('image');
-            $image_name = $image->hashName();
-            $image_location = public_path('/upload');
-            $image->move($image_location, $image_name);
+            // $image = $request->file('image');
+            // $image_name = $image->hashName();
+            // $image_location = public_path('/upload');
+            // $image->move($image_location, $image_name);
+            $image_name = (new User)->userAvatar($request);
         } else {
             $image_name = $user->image;
         }
