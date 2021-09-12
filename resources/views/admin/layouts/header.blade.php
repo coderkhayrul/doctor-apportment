@@ -27,17 +27,6 @@
     <script src="{{asset('template/src/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 
 
-
-
-
-
-
-
-
-
-
-
-
     @yield('custrom_style')
 </head>
 
@@ -145,15 +134,13 @@
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="profile.html"><i class="ik ik-user dropdown-icon"></i>
                                     Profile</a>
-                                <a class="dropdown-item" href="#"><i class="ik ik-settings dropdown-icon"></i>
-                                    Settings</a>
-                                <a class="dropdown-item" href="#"><span class="float-right"><span
-                                            class="badge badge-primary">6</span></span><i
-                                        class="ik ik-mail dropdown-icon"></i> Inbox</a>
-                                <a class="dropdown-item" href="#"><i class="ik ik-navigation dropdown-icon"></i>
-                                    Message</a>
-                                <a class="dropdown-item" href="login.html"><i class="ik ik-power dropdown-icon"></i>
+                                <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                    class="dropdown-item" href="{{ route('logout') }}"><i
+                                        class="ik ik-power dropdown-icon"></i>
                                     Logout</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
                             </div>
                         </div>
 
