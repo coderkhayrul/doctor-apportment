@@ -71,8 +71,9 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input name="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                                    id="password" placeholder="Password" value="{{ old('password') }}">
+                                <input name="password" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" id="password"
+                                    placeholder="Password" value="{{ old('password') }}">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -88,8 +89,10 @@
                                     class="form-control @error('gender') is-invalid @enderror" id="gender">
                                     <option selected value="" disabled>Select Gender</option>
                                     <option {{ $user->gender == 'male' ? ' selected' : '' }} value="male">Male</option>
-                                    <option {{ $user->gender == 'female' ? 'selected' : '' }} value="female">Female</option>
-                                    <option {{ $user->gender == 'other' ? ' selected' : '' }} value="other">Other</option>
+                                    <option {{ $user->gender == 'female' ? 'selected' : '' }} value="female">Female
+                                    </option>
+                                    <option {{ $user->gender == 'other' ? ' selected' : '' }} value="other">Other
+                                    </option>
                                 </select>
                                 @error('gender')
                                 <span class="invalid-feedback" role="alert">
@@ -167,7 +170,8 @@
                                     class="form-control @error('role_id') is-invalid @enderror">
                                     <option selected value="" disabled>Select Role</option>
                                     @foreach ($roles as $role)
-                                    <option {{ $user->role_id == $role->id ? 'selected' : '' }} value="{{ $role->id }}">{{ Str::upper($role->name) }}</option>
+                                    <option {{ $user->role_id == $role->id ? 'selected' : '' }} value="{{ $role->id }}">
+                                        {{ Str::upper($role->name) }}</option>
                                     @endforeach
                                 </select>
                             </div>

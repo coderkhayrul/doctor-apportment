@@ -16,8 +16,8 @@
                         <small class="text-small mt-10 d-block">6% higher than last month</small>
                     </div>
                     <div class="progress progress-sm">
-                        <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="62"
-                            aria-valuemin="0" aria-valuemax="100" style="width: 62%;"></div>
+                        <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="62" aria-valuemin="0"
+                            aria-valuemax="100" style="width: 62%;"></div>
                     </div>
                 </div>
             </div>
@@ -36,8 +36,8 @@
                         <small class="text-small mt-10 d-block">61% higher than last month</small>
                     </div>
                     <div class="progress progress-sm">
-                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="78"
-                            aria-valuemin="0" aria-valuemax="100" style="width: 78%;"></div>
+                        <div class="progress-bar bg-success" role="progressbar" aria-valuenow="78" aria-valuemin="0"
+                            aria-valuemax="100" style="width: 78%;"></div>
                     </div>
                 </div>
             </div>
@@ -56,8 +56,8 @@
                         <small class="text-small mt-10 d-block">Total Events</small>
                     </div>
                     <div class="progress progress-sm">
-                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="31"
-                            aria-valuemin="0" aria-valuemax="100" style="width: 31%;"></div>
+                        <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="31" aria-valuemin="0"
+                            aria-valuemax="100" style="width: 31%;"></div>
                     </div>
                 </div>
             </div>
@@ -76,8 +76,8 @@
                         <small class="text-small mt-10 d-block">Total Comments</small>
                     </div>
                     <div class="progress progress-sm">
-                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="20"
-                            aria-valuemin="0" aria-valuemax="100" style="width: 20%;"></div>
+                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="20" aria-valuemin="0"
+                            aria-valuemax="100" style="width: 20%;"></div>
                     </div>
                 </div>
             </div>
@@ -97,9 +97,8 @@
                                     <div class="col-3 text-right">28%</div>
                                     <div class="col-12">
                                         <div class="progress progress-sm mt-5">
-                                            <div class="progress-bar bg-green" role="progressbar"
-                                                style="width: 48%" aria-valuenow="48" aria-valuemin="0"
-                                                aria-valuemax="100"></div>
+                                            <div class="progress-bar bg-green" role="progressbar" style="width: 48%"
+                                                aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -108,9 +107,8 @@
                                     <div class="col-3 text-right">21%</div>
                                     <div class="col-12">
                                         <div class="progress progress-sm mt-5">
-                                            <div class="progress-bar bg-aqua" role="progressbar"
-                                                style="width: 33%" aria-valuenow="33" aria-valuemin="0"
-                                                aria-valuemax="100"></div>
+                                            <div class="progress-bar bg-aqua" role="progressbar" style="width: 33%"
+                                                aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -119,9 +117,8 @@
                                     <div class="col-3 text-right">18%</div>
                                     <div class="col-12">
                                         <div class="progress progress-sm mt-5">
-                                            <div class="progress-bar bg-purple" role="progressbar"
-                                                style="width: 40%" aria-valuenow="40" aria-valuemin="0"
-                                                aria-valuemax="100"></div>
+                                            <div class="progress-bar bg-purple" role="progressbar" style="width: 40%"
+                                                aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -130,9 +127,8 @@
                                     <div class="col-3 text-right">12%</div>
                                     <div class="col-12">
                                         <div class="progress progress-sm mt-5">
-                                            <div class="progress-bar bg-danger" role="progressbar"
-                                                style="width: 15%" aria-valuenow="15" aria-valuemin="0"
-                                                aria-valuemax="100"></div>
+                                            <div class="progress-bar bg-danger" role="progressbar" style="width: 15%"
+                                                aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -169,8 +165,8 @@
                     <div class="card-body chat-box scrollable" style="height:300px;">
                         <ul class="chat-list">
                             <li class="chat-item">
-                                <div class="chat-img"><img src="{{ asset('template') }}/img/users/1.jpg"
-                                        alt="user"></div>
+                                <div class="chat-img"><img src="{{ asset('template') }}/img/users/1.jpg" alt="user">
+                                </div>
                                 <div class="chat-content">
                                     <h6 class="font-medium">James Anderson</h6>
                                     <div class="box bg-light-info">Lorem Ipsum is simply dummy text of
@@ -179,8 +175,8 @@
                                 <div class="chat-time">10:56 am</div>
                             </li>
                             <li class="chat-item">
-                                <div class="chat-img"><img src="{{ asset('template') }}/img/users/2.jpg"
-                                        alt="user"></div>
+                                <div class="chat-img"><img src="{{ asset('template') }}/img/users/2.jpg" alt="user">
+                                </div>
                                 <div class="chat-content">
                                     <h6 class="font-medium">Bianca Doe</h6>
                                     <div class="box bg-light-info">It’s Great opportunity to work.</div>
@@ -203,8 +199,8 @@
                                 <div class="chat-time">10:59 am</div>
                             </li>
                             <li class="chat-item">
-                                <div class="chat-img"><img src="{{ asset('template') }}/img/users/3.jpg"
-                                        alt="user"></div>
+                                <div class="chat-img"><img src="{{ asset('template') }}/img/users/3.jpg" alt="user">
+                                </div>
                                 <div class="chat-content">
                                     <h6 class="font-medium">Angelina Rhodes</h6>
                                     <div class="box bg-light-info">Well we have good budget for the
@@ -218,8 +214,7 @@
                         <div class="input-wrap">
                             <input type="text" placeholder="Type and enter" class="form-control">
                         </div>
-                        <button type="button" class="btn btn-icon btn-theme"><i
-                                class="fa fa-paper-plane"></i></button>
+                        <button type="button" class="btn btn-icon btn-theme"><i class="fa fa-paper-plane"></i></button>
                     </div>
                 </div>
             </div>
@@ -330,14 +325,12 @@
             <div class="card-header row">
                 <div class="col col-sm-3">
                     <div class="dropdown d-inline-block">
-                        <a class="btn-icon checkbox-dropdown dropdown-toggle" href="#" id="moreDropdown"
-                            role="button" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false"></a>
+                        <a class="btn-icon checkbox-dropdown dropdown-toggle" href="#" id="moreDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
                         <div class="dropdown-menu" aria-labelledby="moreDropdown">
-                            <a class="dropdown-item" id="checkbox_select_all"
-                                href="javascript:void(0);">Select All</a>
-                            <a class="dropdown-item" id="checkbox_deselect_all"
-                                href="javascript:void(0);">Deselect All</a>
+                            <a class="dropdown-item" id="checkbox_select_all" href="javascript:void(0);">Select All</a>
+                            <a class="dropdown-item" id="checkbox_deselect_all" href="javascript:void(0);">Deselect
+                                All</a>
                         </div>
                     </div>
                     <div class="card-options d-inline-block">
@@ -348,8 +341,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
                                     class="ik ik-more-horizontal"></i></a>
-                            <div class="dropdown-menu dropdown-menu-right"
-                                aria-labelledby="moreDropdown">
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="moreDropdown">
                                 <a class="dropdown-item" href="#">Action</a>
                                 <a class="dropdown-item" href="#">More Action</a>
                             </div>
@@ -360,12 +352,10 @@
                     <div class="card-search with-adv-search dropdown">
                         <form action="">
                             <input type="text" class="form-control" placeholder="Search.." required>
-                            <button type="submit" class="btn btn-icon"><i
-                                    class="ik ik-search"></i></button>
+                            <button type="submit" class="btn btn-icon"><i class="ik ik-search"></i></button>
                             <button type="button" id="adv_wrap_toggler"
-                                class="adv-btn ik ik-chevron-down dropdown-toggle"
-                                data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"></button>
+                                class="adv-btn ik ik-chevron-down dropdown-toggle" data-toggle="dropdown"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                             <div class="adv-search-wrap dropdown-menu dropdown-menu-right"
                                 aria-labelledby="adv_wrap_toggler">
                                 <div class="form-group">
@@ -488,8 +478,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
                                     class="ik ik-more-horizontal"></i></a>
-                            <div class="dropdown-menu dropdown-menu-right"
-                                aria-labelledby="moreDropdown">
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="moreDropdown">
                                 <a class="dropdown-item" href="#">Action</a>
                                 <a class="dropdown-item" href="#">More Action</a>
                             </div>
@@ -501,50 +490,47 @@
                         <form action="">
                             <input type="text" class="form-control global_filter" id="global_filter"
                                 placeholder="Search.." required>
-                            <button type="submit" class="btn btn-icon"><i
-                                    class="ik ik-search"></i></button>
+                            <button type="submit" class="btn btn-icon"><i class="ik ik-search"></i></button>
                             <button type="button" id="adv_wrap_toggler"
-                                class="adv-btn ik ik-chevron-down dropdown-toggle"
-                                data-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false"></button>
+                                class="adv-btn ik ik-chevron-down dropdown-toggle" data-toggle="dropdown"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                             <div class="adv-search-wrap dropdown-menu dropdown-menu-right"
                                 aria-labelledby="adv_wrap_toggler">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <input type="text" class="form-control column_filter"
-                                                id="col0_filter" placeholder="Name" data-column="0">
+                                            <input type="text" class="form-control column_filter" id="col0_filter"
+                                                placeholder="Name" data-column="0">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control column_filter"
-                                                id="col1_filter" placeholder="Position" data-column="1">
+                                            <input type="text" class="form-control column_filter" id="col1_filter"
+                                                placeholder="Position" data-column="1">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control column_filter"
-                                                id="col2_filter" placeholder="Office" data-column="2">
+                                            <input type="text" class="form-control column_filter" id="col2_filter"
+                                                placeholder="Office" data-column="2">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <input type="text" class="form-control column_filter"
-                                                id="col3_filter" placeholder="Age" data-column="3">
+                                            <input type="text" class="form-control column_filter" id="col3_filter"
+                                                placeholder="Age" data-column="3">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <input type="text" class="form-control column_filter"
-                                                id="col4_filter" placeholder="Start date"
-                                                data-column="4">
+                                            <input type="text" class="form-control column_filter" id="col4_filter"
+                                                placeholder="Start date" data-column="4">
                                         </div>
                                     </div>
                                     <div class="col-md-4">
                                         <div class="form-group">
-                                            <input type="text" class="form-control column_filter"
-                                                id="col5_filter" placeholder="Salary" data-column="5">
+                                            <input type="text" class="form-control column_filter" id="col5_filter"
+                                                placeholder="Salary" data-column="5">
                                         </div>
                                     </div>
                                 </div>
@@ -567,8 +553,8 @@
                         <tr>
                             <th class="nosort" width="10">
                                 <label class="custom-control custom-checkbox m-0">
-                                    <input type="checkbox" class="custom-control-input" id="selectall"
-                                        name="" value="option2">
+                                    <input type="checkbox" class="custom-control-input" id="selectall" name=""
+                                        value="option2">
                                     <span class="custom-control-label">&nbsp;</span>
                                 </label>
                             </th>
@@ -585,13 +571,12 @@
                         <tr>
                             <td>
                                 <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input select_all_child"
-                                        id="" name="" value="option2">
+                                    <input type="checkbox" class="custom-control-input select_all_child" id="" name=""
+                                        value="option2">
                                     <span class="custom-control-label">&nbsp;</span>
                                 </label>
                             </td>
-                            <td><img src="{{ asset('template') }}/img/users/1.jpg"
-                                    class="table-user-thumb" alt=""></td>
+                            <td><img src="{{ asset('template') }}/img/users/1.jpg" class="table-user-thumb" alt=""></td>
                             <td>Tiger Nixon</td>
                             <td>System Architect</td>
                             <td>Edinburgh</td>
@@ -602,13 +587,12 @@
                         <tr>
                             <td>
                                 <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input select_all_child"
-                                        id="" name="" value="option2">
+                                    <input type="checkbox" class="custom-control-input select_all_child" id="" name=""
+                                        value="option2">
                                     <span class="custom-control-label">&nbsp;</span>
                                 </label>
                             </td>
-                            <td><img src="{{ asset('template') }}/img/users/2.jpg"
-                                    class="table-user-thumb" alt=""></td>
+                            <td><img src="{{ asset('template') }}/img/users/2.jpg" class="table-user-thumb" alt=""></td>
                             <td>Garrett Winters</td>
                             <td>Accountant</td>
                             <td>Tokyo</td>
@@ -619,13 +603,12 @@
                         <tr>
                             <td>
                                 <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input select_all_child"
-                                        id="" name="" value="option2">
+                                    <input type="checkbox" class="custom-control-input select_all_child" id="" name=""
+                                        value="option2">
                                     <span class="custom-control-label">&nbsp;</span>
                                 </label>
                             </td>
-                            <td><img src="{{ asset('template') }}/img/users/3.jpg"
-                                    class="table-user-thumb" alt=""></td>
+                            <td><img src="{{ asset('template') }}/img/users/3.jpg" class="table-user-thumb" alt=""></td>
                             <td>Ashton Cox</td>
                             <td>Junior Technical Author</td>
                             <td>San Francisco</td>
@@ -636,13 +619,12 @@
                         <tr>
                             <td>
                                 <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input select_all_child"
-                                        id="" name="" value="option2">
+                                    <input type="checkbox" class="custom-control-input select_all_child" id="" name=""
+                                        value="option2">
                                     <span class="custom-control-label">&nbsp;</span>
                                 </label>
                             </td>
-                            <td><img src="{{ asset('template') }}/img/users/4.jpg"
-                                    class="table-user-thumb" alt=""></td>
+                            <td><img src="{{ asset('template') }}/img/users/4.jpg" class="table-user-thumb" alt=""></td>
                             <td>Cedric Kelly</td>
                             <td>Senior Javascript Developer</td>
                             <td>Edinburgh</td>
@@ -653,13 +635,12 @@
                         <tr>
                             <td>
                                 <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input select_all_child"
-                                        id="" name="" value="option2">
+                                    <input type="checkbox" class="custom-control-input select_all_child" id="" name=""
+                                        value="option2">
                                     <span class="custom-control-label">&nbsp;</span>
                                 </label>
                             </td>
-                            <td><img src="{{ asset('template') }}/img/users/5.jpg"
-                                    class="table-user-thumb" alt=""></td>
+                            <td><img src="{{ asset('template') }}/img/users/5.jpg" class="table-user-thumb" alt=""></td>
                             <td>Airi Satou</td>
                             <td>Accountant</td>
                             <td>Tokyo</td>
@@ -670,13 +651,12 @@
                         <tr>
                             <td>
                                 <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input select_all_child"
-                                        id="" name="" value="option2">
+                                    <input type="checkbox" class="custom-control-input select_all_child" id="" name=""
+                                        value="option2">
                                     <span class="custom-control-label">&nbsp;</span>
                                 </label>
                             </td>
-                            <td><img src="{{ asset('template') }}/img/users/1.jpg"
-                                    class="table-user-thumb" alt=""></td>
+                            <td><img src="{{ asset('template') }}/img/users/1.jpg" class="table-user-thumb" alt=""></td>
                             <td>Brielle Williamson</td>
                             <td>Integration Specialist</td>
                             <td>New York</td>
@@ -687,13 +667,12 @@
                         <tr>
                             <td>
                                 <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input select_all_child"
-                                        id="" name="" value="option2">
+                                    <input type="checkbox" class="custom-control-input select_all_child" id="" name=""
+                                        value="option2">
                                     <span class="custom-control-label">&nbsp;</span>
                                 </label>
                             </td>
-                            <td><img src="{{ asset('template') }}/img/users/2.jpg"
-                                    class="table-user-thumb" alt=""></td>
+                            <td><img src="{{ asset('template') }}/img/users/2.jpg" class="table-user-thumb" alt=""></td>
                             <td>Herrod Chandler</td>
                             <td>Sales Assistant</td>
                             <td>San Francisco</td>
@@ -704,13 +683,12 @@
                         <tr>
                             <td>
                                 <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input select_all_child"
-                                        id="" name="" value="option2">
+                                    <input type="checkbox" class="custom-control-input select_all_child" id="" name=""
+                                        value="option2">
                                     <span class="custom-control-label">&nbsp;</span>
                                 </label>
                             </td>
-                            <td><img src="{{ asset('template') }}/img/users/3.jpg"
-                                    class="table-user-thumb" alt=""></td>
+                            <td><img src="{{ asset('template') }}/img/users/3.jpg" class="table-user-thumb" alt=""></td>
                             <td>Rhona Davidson</td>
                             <td>Integration Specialist</td>
                             <td>Tokyo</td>
@@ -721,13 +699,12 @@
                         <tr>
                             <td>
                                 <label class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input select_all_child"
-                                        id="" name="" value="option2">
+                                    <input type="checkbox" class="custom-control-input select_all_child" id="" name=""
+                                        value="option2">
                                     <span class="custom-control-label">&nbsp;</span>
                                 </label>
                             </td>
-                            <td><img src="{{ asset('template') }}/img/users/4.jpg"
-                                    class="table-user-thumb" alt=""></td>
+                            <td><img src="{{ asset('template') }}/img/users/4.jpg" class="table-user-thumb" alt=""></td>
                             <td>Colleen Hurst</td>
                             <td>Javascript Developer</td>
                             <td>San Francisco</td>
@@ -757,51 +734,41 @@
             <div class="list-group row">
                 <a href="javascript:void(0)" class="list-group-item" data-chat-user="Gene Newman">
                     <figure class="user--online">
-                        <img src="{{ asset('template') }}/img/users/1.jpg" class="rounded-circle"
-                            alt="">
-                    </figure><span><span class="name">Gene Newman</span> <span
-                            class="username">@gene_newman</span> </span>
+                        <img src="{{ asset('template') }}/img/users/1.jpg" class="rounded-circle" alt="">
+                    </figure><span><span class="name">Gene Newman</span> <span class="username">@gene_newman</span>
+                    </span>
                 </a>
                 <a href="javascript:void(0)" class="list-group-item" data-chat-user="Billy Black">
                     <figure class="user--online">
-                        <img src="{{ asset('template') }}/img/users/2.jpg" class="rounded-circle"
-                            alt="">
-                    </figure><span><span class="name">Billy Black</span> <span
-                            class="username">@billyblack</span> </span>
+                        <img src="{{ asset('template') }}/img/users/2.jpg" class="rounded-circle" alt="">
+                    </figure><span><span class="name">Billy Black</span> <span class="username">@billyblack</span>
+                    </span>
                 </a>
                 <a href="javascript:void(0)" class="list-group-item" data-chat-user="Herbert Diaz">
                     <figure class="user--online">
-                        <img src="{{ asset('template') }}/img/users/3.jpg" class="rounded-circle"
-                            alt="">
-                    </figure><span><span class="name">Herbert Diaz</span> <span
-                            class="username">@herbert</span> </span>
+                        <img src="{{ asset('template') }}/img/users/3.jpg" class="rounded-circle" alt="">
+                    </figure><span><span class="name">Herbert Diaz</span> <span class="username">@herbert</span> </span>
                 </a>
                 <a href="javascript:void(0)" class="list-group-item" data-chat-user="Sylvia Harvey">
                     <figure class="user--busy">
-                        <img src="{{ asset('template') }}/img/users/4.jpg" class="rounded-circle"
-                            alt="">
-                    </figure><span><span class="name">Sylvia Harvey</span> <span
-                            class="username">@sylvia</span> </span>
+                        <img src="{{ asset('template') }}/img/users/4.jpg" class="rounded-circle" alt="">
+                    </figure><span><span class="name">Sylvia Harvey</span> <span class="username">@sylvia</span> </span>
                 </a>
-                <a href="javascript:void(0)" class="list-group-item active"
-                    data-chat-user="Marsha Hoffman">
+                <a href="javascript:void(0)" class="list-group-item active" data-chat-user="Marsha Hoffman">
                     <figure class="user--busy">
-                        <img src="{{ asset('template') }}/img/users/5.jpg" class="rounded-circle"
-                            alt="">
-                    </figure><span><span class="name">Marsha Hoffman</span> <span
-                            class="username">@m_hoffman</span> </span>
+                        <img src="{{ asset('template') }}/img/users/5.jpg" class="rounded-circle" alt="">
+                    </figure><span><span class="name">Marsha Hoffman</span> <span class="username">@m_hoffman</span>
+                    </span>
                 </a>
                 <a href="javascript:void(0)" class="list-group-item" data-chat-user="Mason Grant">
                     <figure class="user--offline">
-                        <img src="{{ asset('template') }}/img/users/1.jpg" class="rounded-circle"
-                            alt="">
-                    </figure><span><span class="name">Mason Grant</span> <span
-                            class="username">@masongrant</span> </span>
+                        <img src="{{ asset('template') }}/img/users/1.jpg" class="rounded-circle" alt="">
+                    </figure><span><span class="name">Mason Grant</span> <span class="username">@masongrant</span>
+                    </span>
                 </a>
                 <a href="javascript:void(0)" class="list-group-item" data-chat-user="Shelly Sullivan">
                     <figure class="user--offline">
-                        <img src="{{ asset('template') }}/img/users/2.jpg" class="rounded-circle"
-                            alt="">
+                        <img src="{{ asset('template') }}/img/users/2.jpg" class="rounded-circle" alt="">
                     </figure><span><span class="name">Shelly Sullivan</span> <span
                             class="username">@shelly</span></span>
                 </a>
@@ -815,8 +782,7 @@
         <div class="card-header d-flex justify-content-between">
             <a href="javascript:void(0);"><i class="ik ik-message-square text-success"></i></a>
             <span class="user-name">John Doe</span>
-            <button type="button" class="close" aria-label="Close"><span
-                    aria-hidden="true">×</span></button>
+            <button type="button" class="close" aria-label="Close"><span aria-hidden="true">×</span></button>
         </div>
         <div class="card-body">
             <div class="widget-chat-activity flex-1">
@@ -824,8 +790,7 @@
                     <div class="message media reply">
                         <figure class="user--online">
                             <a href="#">
-                                <img src="{{ asset('template') }}/img/users/3.jpg"
-                                    class="rounded-circle" alt="">
+                                <img src="{{ asset('template') }}/img/users/3.jpg" class="rounded-circle" alt="">
                             </a>
                         </figure>
                         <div class="message-body media-body">
@@ -835,8 +800,7 @@
                     <div class="message media">
                         <figure class="user--online">
                             <a href="#">
-                                <img src="{{ asset('template') }}/img/users/1.jpg"
-                                    class="rounded-circle" alt="">
+                                <img src="{{ asset('template') }}/img/users/1.jpg" class="rounded-circle" alt="">
                             </a>
                         </figure>
                         <div class="message-body media-body">
@@ -846,8 +810,7 @@
                     <div class="message media reply">
                         <figure class="user--offline">
                             <a href="#">
-                                <img src="{{ asset('template') }}/img/users/5.jpg"
-                                    class="rounded-circle" alt="">
+                                <img src="{{ asset('template') }}/img/users/5.jpg" class="rounded-circle" alt="">
                             </a>
                         </figure>
                         <div class="message-body media-body">
@@ -858,8 +821,7 @@
                     <div class="message media">
                         <figure class="user--online">
                             <a href="#">
-                                <img src="{{ asset('template') }}/img/users/1.jpg"
-                                    class="rounded-circle" alt="">
+                                <img src="{{ asset('template') }}/img/users/1.jpg" class="rounded-circle" alt="">
                             </a>
                         </figure>
                         <div class="message-body media-body">
@@ -869,8 +831,7 @@
                     <div class="message media reply">
                         <figure class="user--busy">
                             <a href="#">
-                                <img src="{{ asset('template') }}/img/users/5.jpg"
-                                    class="rounded-circle" alt="">
+                                <img src="{{ asset('template') }}/img/users/5.jpg" class="rounded-circle" alt="">
                             </a>
                         </figure>
                         <div class="message-body media-body">
@@ -881,8 +842,7 @@
                     <div class="message media">
                         <figure class="user--online">
                             <a href="#">
-                                <img src="{{ asset('template') }}/img/users/1.jpg"
-                                    class="rounded-circle" alt="">
+                                <img src="{{ asset('template') }}/img/users/1.jpg" class="rounded-circle" alt="">
                             </a>
                         </figure>
                         <div class="message-body media-body">
@@ -894,10 +854,8 @@
         </div>
         <form action="javascript:void(0)" class="card-footer" method="post">
             <div class="d-flex justify-content-end">
-                <textarea class="border-0 flex-1" rows="1"
-                    placeholder="Type your message here"></textarea>
-                <button class="btn btn-icon" type="submit"><i
-                        class="ik ik-arrow-right text-success"></i></button>
+                <textarea class="border-0 flex-1" rows="1" placeholder="Type your message here"></textarea>
+                <button class="btn btn-icon" type="submit"><i class="ik ik-arrow-right text-success"></i></button>
             </div>
         </form>
     </div>

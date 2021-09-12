@@ -70,8 +70,9 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="password">Password</label>
-                                <input name="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                                    id="password" placeholder="Password" value="{{ old('password') }}">
+                                <input name="password" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" id="password"
+                                    placeholder="Password" value="{{ old('password') }}">
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
