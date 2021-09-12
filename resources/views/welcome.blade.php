@@ -4,17 +4,18 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <img class="img-fluid" src="/banner/online-medicine-concept_160901-152.jpg" alt="" style="border:1px solid #ccd; ">
+            <img class="img-fluid" src="/banner/online-medicine-concept_160901-152.jpg" alt=""
+                style="border:1px solid #ccd; ">
         </div>
         <div class="col-md-6">
             <h2>Create an account & Book your appointment</h2>
             <p>Laboris nostra cras autem, ullam ducimus nobis, auctor perspiciatis nam, morbi vero, dolorum cursus duis
                 sociis asperiores quasi, maecenas rerum nostrud dicta pariatur commodi mattis ducimus sint suspendisse,
                 atque egestas ridiculus similique.</p>
-                <div class="mt-5">
-                    <button class="btn btn-success">Register ad Patient</button>
-                    <button class="btn btn-secondary">Login</button>
-                </div>
+            <div class="mt-5">
+                <button class="btn btn-success">Register ad Patient</button>
+                <button class="btn btn-secondary">Login</button>
+            </div>
         </div>
     </div>
     <hr>
@@ -27,7 +28,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-8">
-                        <input type="date" name="date" class="form-control" placeholder="">
+                        <input type="text" name="date" class="form-control" placeholder="" id="datepicker">
                     </div>
                     <div class="col-md-4">
                         <button class="btn btn-primary" type="submit">Find Doctors</button>
@@ -57,7 +58,8 @@
                         <tr>
                             <th scope="row">1</th>
                             <td>
-                                <img width="80px" style="border-radius: 50% " src="{{ asset('template/img/users/4.jpg') }}" alt="">
+                                <img width="80px" style="border-radius: 50% "
+                                    src="{{ asset('template/img/users/4.jpg') }}" alt="">
                             </td>
                             <td>Name Of Doctor</td>
                             <td>Name Of Department</td>
@@ -71,5 +73,4 @@
         </div>
     </div>
 </div>
-
 @endsection

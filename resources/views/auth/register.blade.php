@@ -66,7 +66,7 @@
 
                             <div class="col-md-6">
                                 <select name="gender" id="gender" class="form-control  @error('gender') is-invalid @enderror">
-                                    <option value="" disabled>Select Gender</option>
+                                    <option value="" disabled selected>Select Gender</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
                                     <option value="other">Other</option>
