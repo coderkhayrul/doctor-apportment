@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointment;
+use App\Models\Time;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AppointmentController extends Controller
 {
@@ -34,7 +37,18 @@ class AppointmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $appointment = new Appointment();
+        $appointment->user_id = Auth::user()->id;
+        $appointment->date = $request->date;
+        $appointment->save();
+        foreach ($request->time as $time) {
+            $time_m = new Time();
+            $time_m->appointment_id = $appointment->id;
+            $time_m->time = $time;
+            // $time_m->status = 0;
+            $time_m->save();
+        }
+        return redirect()->back()->with('message', 'Appointment Create for ' . $request->date);
     }
 
     /**
