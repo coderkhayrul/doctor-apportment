@@ -9,6 +9,17 @@ use Illuminate\Support\Facades\Auth;
 
 class AppointmentController extends Controller
 {
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +27,8 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        //
+        $myappointments = Appointment::latest()->where('user_id', Auth::user()->id)->get();
+        return view('admin.appointment.index', compact('myappointments'));
     }
 
     /**
@@ -94,5 +106,34 @@ class AppointmentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function appointmentCheck(Request $request)
+    {
+        $date = $request->date;
+        $appointment = Appointment::where('date', $date)->where('user_id', Auth::user()->id)->first();
+        // dd($appointment);
+        if (!$appointment) {
+            return redirect()->to('/appointment')->with('errormessage', 'Appointment Time Not Available For This Date');
+        }
+        $appointmentId = $appointment->id;
+        $times = Time::where('appointment_id', $appointmentId)->get();
+
+        return view('admin.appointment.index', compact('appointmentId', 'times', 'date'));
+    }
+
+    public function appointmentTimeUpdate(Request $request)
+    {
+        // dd($request->all());
+        $appointmentId = $request->appointmentId;
+        $appointment = Time::where('appointment_id', $appointmentId)->delete();
+        foreach ($request->time as $time) {
+            $time_m = new Time();
+            $time_m->appointment_id = $request->appointmentId;
+            $time_m->time = $time;
+            // $time_m->status = 0;
+            $time_m->save();
+        }
+        return redirect()->route('appointment.index')->with('message', 'Appointment Updated successfully');
     }
 }
