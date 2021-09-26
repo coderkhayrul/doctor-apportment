@@ -20,23 +20,26 @@
     </div>
     <hr>
     <!-- Search Doctor -->
-    <div class="card">
-        <div class="card-body">
-            <div class="card-header">
-                Find Doctors
-            </div>
+    <form action="{{ url('/') }}" method="get">
+        @csrf
+        <div class="card">
             <div class="card-body">
-                <div class="row">
-                    <div class="col-md-8">
-                        <input type="text" name="date" class="form-control" placeholder="" id="datepicker">
-                    </div>
-                    <div class="col-md-4">
-                        <button class="btn btn-primary" type="submit">Find Doctors</button>
+                <div class="card-header">
+                    Find Doctors
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input type="text" name="date" class="form-control" placeholder="" id="datepicker">
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary" type="submit">Find Doctors</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
     <!-- Display Doctors -->
     <div class="card">
         <div class="card-body">
@@ -60,7 +63,8 @@
                             <th scope="row">{{ ++$key }}</th>
                             <td>
                                 <img width="80px" style="border-radius: 50% "
-                                    src="{{ $doctor->doctor->image ? asset('upload').'/'.$doctor->doctor->image : asset('template/img/users/4.jpg') }}" alt="">
+                                    src="{{ $doctor->doctor->image ? asset('upload').'/'.$doctor->doctor->image : asset('template/img/users/4.jpg') }}"
+                                    alt="">
                             </td>
                             <td>{{ $doctor->doctor->name }}</td>
                             <td>{{ $doctor->doctor->department }}</td>
