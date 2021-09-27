@@ -42,8 +42,16 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button type="submit" class="btn btn-success" style="width: 100%">Book Appointment</button>
-            </div>
+                    @auth
+                        <button type="submit" class="btn btn-success" style="width: 100%">Book Appointment</button>
+                    @endauth
+                    @guest
+                        <p>Please login to make an appointment.</p>
+                        <a class="btn btn-success" href="/register">Register</a>
+                        <a class="btn btn-primary" href="/login">Login</a>
+                    @endguest
+                </div>
+
             </form>
 
         </div>
