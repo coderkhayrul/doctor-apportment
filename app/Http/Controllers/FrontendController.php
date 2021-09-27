@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Appointment;
+use App\Models\Booking;
 use App\Models\Time;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FrontendController extends Controller
 {
@@ -32,5 +34,26 @@ class FrontendController extends Controller
     {
         $doctors = Appointment::where('date', $date)->get();
         return $doctors;
+    }
+
+    public function store(Request $request)
+    {
+        // Appointment Validation
+        $request->validate(['time' => 'required']);
+
+        // Appointment Booking
+        $booking = new Booking();
+        $booking->user_id = Auth::user()->id;
+        $booking->doctor_id = $request->doctorId;
+        $booking->time = $request->time;
+        $booking->status = 0;
+        $booking->date = $request->date;
+        $booking->save();
+
+        // Time Status Update
+        Time::where('appointment_id', $request->appointment_id)
+            ->where('time', $request->time)
+            ->update(['status' => 1]);
+        return redirect()->back()->with('message', "Your Appointment Was Booked");
     }
 }
