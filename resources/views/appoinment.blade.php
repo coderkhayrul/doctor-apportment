@@ -23,7 +23,8 @@
             </div>
         </div>
         <div class="col-md-9">
-            <form action="">
+            <form action="" method="post">
+                @csrf
                 <div class="card">
                 <div class="card-header lead">{{ $date }}</div>
 
@@ -32,10 +33,13 @@
                         @foreach ($times as $time)
                         <div class="col-md-3">
                             <label class="btn btn-outline-primary" for="">
-                                <input type="radio" name="status" value="1">
+                                <input type="radio" name="time" value="{{ $time->time }}">
                                 <span>{{ $time->time }}</span>
                             </label>
                         </div>
+                        <input type="hidden" name="doctorId" value="{{ $doctorId}}">
+                        <input type="hidden" name="appointment_id" value="{{ $time->appointment_id }}">
+
                         @endforeach
 
                     </div>

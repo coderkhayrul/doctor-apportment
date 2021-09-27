@@ -25,7 +25,8 @@ class FrontendController extends Controller
         $appoinment = Appointment::where('user_id', $doctorId)->where('date', $date)->first();
         $times = Time::where('appointment_id', $appoinment->id)->where('status', 0)->get();
         $user = User::where('id', $doctorId)->first();
-        return view('appoinment', compact('times', 'date', 'user'));
+        $doctorId = $doctorId;
+        return view('appoinment', compact('times', 'date', 'user', 'doctorId'));
     }
     public function FindDoctorBasedOnDate($date)
     {

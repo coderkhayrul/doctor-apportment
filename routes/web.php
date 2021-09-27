@@ -25,10 +25,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('new-appointment/{doctorId}/{date}', [FrontendController::class, 'show'])->name('create.appointment');
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// });
 Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::post('/book/appointment', [FrontendController::class, 'store'])->name('book.appointment')->middleware('auth');
 
 
 
