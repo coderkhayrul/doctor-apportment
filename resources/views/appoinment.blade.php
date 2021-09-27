@@ -23,11 +23,19 @@
             </div>
         </div>
         <div class="col-md-9">
+            <!-- Form Validation Error Message -->
             @foreach ($errors->all() as $error)
                 <div class="alert alert-danger">
                     {{ $error }}
                 </div>
             @endforeach
+            <!-- Booking Error Message -->
+            @if (Session::has('errormessage'))
+                <div class="alert alert-warning">
+                    {{ Session::get('errormessage') }}
+                </div>
+            @endif
+            <!-- Success Message -->
             @if (Session::has('message'))
                 <div class="alert alert-success">
                     {{ Session::get('message') }}
