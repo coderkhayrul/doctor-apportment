@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\AppointmentMail;
 use App\Models\Appointment;
 use App\Models\Booking;
 use App\Models\Time;
@@ -60,6 +61,21 @@ class FrontendController extends Controller
         Time::where('appointment_id', $request->appointment_id)
             ->where('time', $request->time)
             ->update(['status' => 1]);
+        // Send Email Notification
+        $doctorName = User::where('id', $request->doctorId)->first();
+        $mailData = [
+            'name' => Auth::user()->name,
+            'time' => $request->time,
+            'date' => $request->date,
+            'doctorName' => $doctorName->name,
+
+        ];
+        // dd($doctorName);
+        try {
+            \Mail::to(Auth::user()->email)->send(new AppointmentMail($mailData));
+        } catch (\Throwable $th) {
+            throw $th;
+        }
         return redirect()->back()->with('message', "Your Appointment Was Booked");
     }
 
