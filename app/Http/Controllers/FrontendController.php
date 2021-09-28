@@ -87,4 +87,10 @@ class FrontendController extends Controller
             ->whereDate('created_at', date('Y-m-d'))
             ->exists();
     }
+
+    public function mybooking()
+    {
+        $appointments = Booking::where('user_id', Auth::user()->id)->latest()->get();
+        return view('booking.index', compact('appointments'));
+    }
 }
