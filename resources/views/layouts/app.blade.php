@@ -47,11 +47,14 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+
+                        @auth
                         @if (Auth::user()->role('patient'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('my.booking') }}">{{ __('My Booking') }}</a>
                         </li>
                         @endif
+                        @endauth
                         <!-- Authentication Links -->
                         @guest
                         @if (Route::has('login'))

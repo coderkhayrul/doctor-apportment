@@ -36,7 +36,7 @@
                                     </td>
                                 </tr>
                             @empty
-                                <td>@You Have No Appointment </td>
+                                <td>You Have No Appointment </td>
                             @endforelse
                         </tbody>
                     </table>
