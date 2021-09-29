@@ -2145,14 +2145,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
-    return {};
+    return {
+      time: ''
+    };
   },
   components: {
     datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  methods: {
+    custromDate: function custromDate(date) {
+      this.time = moment__WEBPACK_IMPORTED_MODULE_1___default()(date).format('YYYY-MM-DD');
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    axios.get('/api/doctors/today').then(function (response) {
+      _this.doctors = response.data;
+    });
   }
 });
 
@@ -59271,10 +59291,70 @@ var render = function() {
         _vm._v("\n            Find Doctor\n        ")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "card-body" }, [_c("datepicker")], 1)
+      _c(
+        "div",
+        { staticClass: "card-body" },
+        [
+          _c("datepicker", {
+            attrs: { format: _vm.custromDate, inline: true },
+            model: {
+              value: _vm.time,
+              callback: function($$v) {
+                _vm.time = $$v
+              },
+              expression: "time"
+            }
+          })
+        ],
+        1
+      )
     ]),
     _vm._v(" "),
-    _vm._m(0)
+    _c("div", { staticClass: "card" }, [
+      _c("div", { staticClass: "card-header" }, [
+        _vm._v("\n            Doctor\n        ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card-body" }, [
+        _c("table", { staticClass: "table table-striped" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "tbody",
+            _vm._l(_vm.doctors, function(d, index) {
+              return _c("tr", [
+                _c("td", { attrs: { scope: "row" } }, [
+                  _vm._v(_vm._s(index + 1))
+                ]),
+                _vm._v(" "),
+                _vm._m(1, true),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(d.doctor.name))]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(d.doctor.department))]),
+                _vm._v(" "),
+                _c("td", [
+                  _c(
+                    "a",
+                    {
+                      attrs: {
+                        href: "/new-appointment/" + d.user_id + "/" + d.date
+                      }
+                    },
+                    [
+                      _c("button", { staticClass: "btn btn-success" }, [
+                        _vm._v("Book Appointment")
+                      ])
+                    ]
+                  )
+                ])
+              ])
+            }),
+            0
+          )
+        ])
+      ])
+    ])
   ])
 }
 var staticRenderFns = [
@@ -59282,42 +59362,32 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card" }, [
-      _c("div", { staticClass: "card-header" }, [
-        _vm._v("\n            Doctor\n        ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-body" }, [
-        _c("table", { staticClass: "table table-striped" }, [
-          _c("thead", [
-            _c("tr", [
-              _c("th", [_vm._v("#")]),
-              _vm._v(" "),
-              _c("th", [_vm._v("Image")]),
-              _vm._v(" "),
-              _c("th", [_vm._v("Name")]),
-              _vm._v(" "),
-              _c("th", [_vm._v("Expertise")]),
-              _vm._v(" "),
-              _c("th", [_vm._v("Booking")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _c("td"),
-              _vm._v(" "),
-              _c("td"),
-              _vm._v(" "),
-              _c("td"),
-              _vm._v(" "),
-              _c("td"),
-              _vm._v(" "),
-              _c("td")
-            ])
-          ])
-        ])
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("#")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Image")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Expertise")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Booking")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("img", {
+        attrs: {
+          src: "'/upload/'+ d.doctors.image",
+          width: "80",
+          alt: "Doctor Image"
+        }
+      })
     ])
   }
 ]
