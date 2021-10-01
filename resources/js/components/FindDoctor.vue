@@ -5,7 +5,7 @@
                 Find Doctor
             </div>
             <div class="card-body">
-                <datepicker class="my-datepicker" calendar-class="my-datepicker_calendar" :format="custromDate" v-model="time" :inline="true"></datepicker>
+                <datepicker class="my-datepicker" :disabledDates="disabledDates" calendar-class="my-datepicker_calendar" :format="custromDate" v-model="time" :inline="true"></datepicker>
             </div>
         </div>
 
@@ -38,11 +38,14 @@
                                 </a>
                             </td>
                         </tr>
-                        <td v-if="!doctors.lenght">
+                        <th v-if="doctors.lenght == 0">
                             No Doctor Appointment found {{ this.time }}
-                        </td>
+                        </th>
                     </tbody>
                 </table>
+                <div class="text-center">
+                    <pulse-loader :loading="loading" :color="color" :size="size"></pulse-loader>
+                </div>
             </div>
         </div>
 
@@ -52,28 +55,43 @@
 <script type="text/javascript">
     import datepicker from 'vuejs-datepicker';
     import moment from 'moment';
+    import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 export default {
 
     data() {
         return{
             time:'',
-            doctors:[]
+            doctors:[],
+            loading:false,
+            disabledDates:{
+                to: new Date(Date.now() - 8640000)
+            }
         }
     },
     components:{
-        datepicker
+        datepicker,
+        PulseLoader
     },
     methods: {
         custromDate(date){
+            this.loading = true;
             this.time = moment(date).format('YYYY-MM-DD');
-            axios.post('api/finddoctor',{date:this.time}).then((response) =>{
+            axios.post('api/finddoctor',{date:this.time}).
+            then((response) =>{
+                setTimeout(()=>{
+                    this.doctors = response.data
+                    this.loading = false
+                }, 1000)
                 this.doctors = response.data
+
             }).catch((error) => {alert('error')})
         }
     },
     mounted(){
+        this.loading = true
         axios.get('/api/doctors/today').then((response) =>{
             this.doctors = response.data
+            this.loading = false
         });
 
         }

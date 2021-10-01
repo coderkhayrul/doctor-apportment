@@ -26,6 +26,7 @@
     },
     "dependencies": {
         "moment": "^2.29.1",
+        "vue-spinner": "^1.0.4",
         "vuejs-datepicker": "^1.6.2"
     }
 }
