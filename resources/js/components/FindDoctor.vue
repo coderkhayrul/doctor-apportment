@@ -5,13 +5,13 @@
                 Find Doctor
             </div>
             <div class="card-body">
-                <datepicker :format="custromDate" v-model="time" :inline="true"></datepicker>
+                <datepicker class="my-datepicker" calendar-class="my-datepicker_calendar" :format="custromDate" v-model="time" :inline="true"></datepicker>
             </div>
         </div>
 
         <div class="card">
             <div class="card-header">
-                Doctor
+                Doctor List
             </div>
             <div class="card-body">
                 <table class="table table-striped">
@@ -28,7 +28,7 @@
                         <tr v-for="(d, index) in doctors">
                             <td scope="row">{{ index+1 }}</td>
                             <td>
-                                <img src="'/upload/'+ d.doctors.image" width="80" alt="Doctor Image">
+                                <!-- <img :src="'/upload/'+ d.doctor.image" width="80" alt="Doctor Image"> -->
                             </td>
                             <td>{{d.doctor.name}}</td>
                             <td>{{d.doctor.department}}</td>
@@ -38,6 +38,9 @@
                                 </a>
                             </td>
                         </tr>
+                        <td v-if="!doctors.lenght">
+                            No Doctor Appointment found {{ this.time }}
+                        </td>
                     </tbody>
                 </table>
             </div>
@@ -53,7 +56,8 @@ export default {
 
     data() {
         return{
-            time:''
+            time:'',
+            doctors:[]
         }
     },
     components:{
@@ -62,6 +66,9 @@ export default {
     methods: {
         custromDate(date){
             this.time = moment(date).format('YYYY-MM-DD');
+            axios.post('api/finddoctor',{date:this.time}).then((response) =>{
+                this.doctors = response.data
+            }).catch((error) => {alert('error')})
         }
     },
     mounted(){
@@ -72,3 +79,10 @@ export default {
         }
     }
 </script>
+
+<style scoped>
+    .my-datepicker >>> .my-datepicker_calendar{
+        width: 100%;
+        height: 330px;
+    }
+</style>

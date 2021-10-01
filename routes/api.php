@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/doctors/today', [FrontendController::class, 'doctorToday']);
+Route::post('/finddoctor', [FrontendController::class, 'findDoctors']);
