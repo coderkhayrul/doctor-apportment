@@ -19,6 +19,11 @@
         </div>
 
         <div class="col-md-6">
+            @if (Session::has('message'))
+                <div class="alert alert-success">
+                    {{ Session::get('message') }}
+                </div>
+            @endif
             <div class="card">
                 <div class="card-header">Update Profile</div>
 
@@ -27,30 +32,40 @@
                         @csrf
                         <div class="form-group">
                             <label for="">Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="">
+                            <input type="text" name="name" class="form-control  @error('name') is-invalid @enderror" placeholder="" value="{{ Auth::user()->name }}">
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="">Address</label>
-                            <input type="text" name="address" class="form-control" placeholder="">
+                            <input type="text" name="address" class="form-control" placeholder="" value="{{ Auth::user()->address }}">
                         </div>
                         <div class="form-group">
                             <label for="">Phone Number</label>
-                            <input type="text" name="phone_number" class="form-control" placeholder="">
+                            <input type="text" name="phone_number" class="form-control" placeholder="" value="{{ Auth::user()->phone_number }}">
                         </div>
                         <div class="form-group">
                             <label for="">Gender</label>
-                            <select name="gender" id="" class="form-control">
-                                <option class="selected" value="">SELECT OPTION</option>
-                                <option value="male">MALE</option>
-                                <option value="female">FEMALE</option>
-                                <option value="other">OTHER</option>
+                            <select name="gender"  id="" class="form-control  @error('gender') is-invalid @enderror">
+                                <option disabled selected value="">SELECT OPTION</option>
+                                <option {{ Auth::user()->gender == 'male' ? 'selected' : '' }} value="male">MALE</option>
+                                <option {{ Auth::user()->gender == 'female' ? 'selected' : '' }} value="female">FEMALE</option>
+                                <option {{ Auth::user()->gender == 'other' ? 'selected' : '' }} value="other">OTHER</option>
                             </select>
+                            @error('gender')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="form-group">
                             <label for="">Bio</label>
-                            <textarea class="form-control" name="description" id="" rows="3"></textarea>
+                            <textarea class="form-control" name="description" id="" rows="3">{{ Auth::user()->description }}</textarea>
                         </div>
-                        <button type="submit" class="btn btn-success">Information Update</button>
+                        <button type="submit" class="btn btn-success">Update</button>
                     </form>
                 </div>
             </div>
@@ -65,7 +80,6 @@
                     <br><br>
                     <form action="" method="post" enctype="multipart/form">
                         <div class="form-group">
-                            {{-- <label class="control-label" for="">Profile Image</label> --}}
                             <input type="file" name="image" class="form-control" id="image">
                         </div>
                         <button type="submit" class="btn btn-success">Image Update</button>
