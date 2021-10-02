@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,12 @@ Route::get('new-appointment/{doctorId}/{date}', [FrontendController::class, 'sho
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::post('/book/appointment', [FrontendController::class, 'store'])->name('book.appointment')->middleware('auth');
 Route::get('/my-booking', [FrontendController::class, 'mybooking'])->name('my.booking')->middleware('auth');
+
+// <!-- PROFILE ROUTE -->
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
+});
 
 Auth::routes();
 
