@@ -74,9 +74,15 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                @if (Auth::check() && Auth::user()->role->name === 'patient')
                                 <a class="dropdown-item" href="{{ route('profile.index') }}">
                                     Profile
                                 </a>
+                                @else
+                                <a class="dropdown-item" href="{{ url('dashboard') }}">
+                                    Dashboard
+                                </a>
+                                @endif
 
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">

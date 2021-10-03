@@ -27,11 +27,12 @@ Route::get('/', [FrontendController::class, 'index']);
 Route::get('new-appointment/{doctorId}/{date}', [FrontendController::class, 'show'])->name('create.appointment');
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
-Route::post('/book/appointment', [FrontendController::class, 'store'])->name('book.appointment')->middleware('auth');
-Route::get('/my-booking', [FrontendController::class, 'mybooking'])->name('my.booking')->middleware('auth');
+
 
 // <!-- PROFILE ROUTE -->
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'patient'])->group(function () {
+    Route::post('/book/appointment', [FrontendController::class, 'store'])->name('book.appointment');
+    Route::get('/my-booking', [FrontendController::class, 'mybooking'])->name('my.booking');
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
     Route::post('/profile-pic', [ProfileController::class, 'profilePic'])->name('profile.image');
