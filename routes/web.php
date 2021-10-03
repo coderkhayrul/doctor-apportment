@@ -34,6 +34,7 @@ Route::get('/my-booking', [FrontendController::class, 'mybooking'])->name('my.bo
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
+    Route::post('/profile-pic', [ProfileController::class, 'profilePic'])->name('profile.image');
 });
 
 Auth::routes();

@@ -76,11 +76,21 @@
                 <div class="card-header">Update Image</div>
 
                 <div class="card-body">
-                    <img src="{{ asset('upload/default.jpg') }}" alt="" width="120px">
+                    @if (!auth()->user()->image)
+                    <img src="{{ asset('upload/default.jpg') }}" alt="Image" width="120px">
+                    @else
+                    <img src="{{ asset('profile_image/'.auth()->user()->image) }}" alt="Image" width="120px">
+                    @endif
                     <br><br>
-                    <form action="" method="post" enctype="multipart/form">
+                    <form action="{{ route('profile.image') }}" method="post" enctype="multipart/form-data">
+                        @csrf
                         <div class="form-group">
-                            <input type="file" name="image" class="form-control" id="image">
+                            <input required type="file" name="image" class="form-control  @error('image') is-invalid @enderror" id="image">
+                            @error('image')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <button type="submit" class="btn btn-success">Image Update</button>
                     </form>
