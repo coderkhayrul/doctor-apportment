@@ -37,14 +37,32 @@
         @endif
         <div class="card">
                 <div class="card-header">Your Appointments: {{ count($bookings) }}</div>
+                <div class="card-header">
+                    <form action="{{ route('patient') }}" method="GET">
+                        Filter:
+                        <div class="row">
+                            <div class="card-md-10">
+                                <input type="text" name="date" class="form-control datetimepicker-input" id="datepicker"
+                                    data-toggle="datetimepicker" data-target="#datepicker">
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-primary">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
 
                 <div class="card-body">
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
+                                <th scope="col">Image</th>
                                 <th scope="col">Date</th>
                                 <th scope="col">User</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Gender</th>
                                 <th scope="col">Time </th>
                                 <th scope="col">Doctor</th>
                                 <th scope="col">Status</th>
@@ -54,8 +72,14 @@
                             @forelse ($bookings as $key => $booking)
                                 <tr>
                                     <th scope="row">{{ $key+1 }}</th>
+                                    <td>
+                                        <img src="upload/{{ $booking->doctor->image }}" alt="" width="80" style="border-radius: 50%;">
+                                    </td>
                                     <td>{{ $booking->date }}</td>
-                                    <td>{{ $booking->doctor->name }}</td>
+                                    <td>{{ $booking->user->name }}</td>
+                                    <td>{{ $booking->user->email }}</td>
+                                    <td>{{ $booking->user->phone_number }}</td>
+                                    <td>{{ $booking->user->gender }}</td>
                                     <td>{{ $booking->time}}</td>
                                     <td>{{ $booking->doctor->name }}</td>
                                     <td>
@@ -75,4 +99,25 @@
             </div>
     </div>
 </div>
+@endsection
+
+@section('custrom_script')
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#datepicker').datetimepicker({
+            format: 'YYYY-MM-DD'
+        });
+    });
+
+    // All Time Selector Function
+    $(document).ready(function () {
+        $('#select_all').click(function () {
+            var checked = this.checked;
+            $('input[type="checkbox"]').each(function () {
+                this.checked = checked;
+            });
+        })
+    });
+
+</script>
 @endsection
