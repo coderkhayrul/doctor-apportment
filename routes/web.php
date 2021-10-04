@@ -46,6 +46,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('/doctor', DoctorController::class);
     Route::get('/patient', [PatientListController::class, 'index'])->name('patient');
+    Route::get('/status/update/{id}', [PatientListController::class, 'toggleStatus'])->name('update.status');
 });
 
 Route::middleware(['auth', 'doctor'])->group(function () {
