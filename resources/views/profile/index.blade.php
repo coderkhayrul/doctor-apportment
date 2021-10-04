@@ -25,7 +25,7 @@
                 </div>
             @endif
             <div class="card">
-                <div class="card-header">Update Profile</div>
+                <div class="card-header bg-primary text-white">Update Profile</div>
 
                 <div class="card-body">
                     <form action="{{ route('profile.store') }}" method="post">
@@ -73,7 +73,7 @@
 
         <div class="col-md-3">
             <div class="card">
-                <div class="card-header">Update Image</div>
+                <div class="card-header bg-primary text-white">Update Image</div>
 
                 <div class="card-body">
                     @if (!auth()->user()->image)

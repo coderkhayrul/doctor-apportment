@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PatientListController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -44,6 +45,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('/doctor', DoctorController::class);
+    Route::get('/patient', [PatientListController::class, 'index']);
 });
 
 Route::middleware(['auth', 'doctor'])->group(function () {
