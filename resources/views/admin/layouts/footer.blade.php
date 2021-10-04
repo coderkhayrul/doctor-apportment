@@ -129,6 +129,7 @@
 <script src="{{asset('template/js/widgets.js')}}"></script>
 <script src="{{asset('template/js/charts.js')}}"></script>
 <script src="{{asset('template/dist/js/theme.min.js')}}"></script>
+<script src="{{ asset('js/app.js') }}" defer></script>
 
 
 

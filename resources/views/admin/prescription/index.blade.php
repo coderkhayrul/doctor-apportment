@@ -108,7 +108,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" id="app">
                 <input type="hidden" name="user_id" id="user_id" value="{{ $booking->user_id }}">
                 <input type="hidden" name="doctor_id" id="doctor_id" value="{{ $booking->doctor_id }}">
                 <input type="hidden" name="date" id="date" value="{{ $booking->date }}">
@@ -119,6 +119,10 @@
                 <div class="form-group">
                     <label for="">Symptoms</label>
                     <textarea name="symptoms" class="form-control" id="" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="">Medicine</label>
+                    <add-button></add-button>
                 </div>
                 <div class="form-group">
                     <label for="">Procedure to use Medicine</label>
