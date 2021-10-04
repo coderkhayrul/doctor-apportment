@@ -6,6 +6,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PatientListController;
+use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -54,4 +55,5 @@ Route::middleware(['auth', 'doctor'])->group(function () {
     Route::post('/appointment/check', [AppointmentController::class, 'appointmentCheck'])->name('appointment.check');
     Route::post('/appointment/time/update', [AppointmentController::class, 'appointmentTimeUpdate'])->name('appointment.time.update');
     Route::resource('/appointment', AppointmentController::class);
+    Route::get('/patient-today', [PrescriptionController::class, 'index']);
 });
