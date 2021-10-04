@@ -59,6 +59,18 @@
                                 </div>
                                 @endif
                                 <!-- PATIENT APPOINTMET END -->
+                                <!-- LOGOUT START -->
+                                <div class="nav-item active">
+                                    <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                        href="{{ route('logout') }}"><i
+                                        class="ik ik-power dropdown-icon"></i>
+                                        Logout
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                                <!-- LOGOUT END -->
                             </nav>
                         </div>
                     </div>
