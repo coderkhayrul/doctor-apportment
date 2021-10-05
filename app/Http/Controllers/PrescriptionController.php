@@ -11,7 +11,7 @@ class PrescriptionController extends Controller
     public function index()
     {
         date_default_timezone_set('Asia/Dhaka');
-        $bookings = Booking::where('date', date('Y-m-d'))->where('status', 1)->get();
+        $bookings = Booking::where('date', date('Y-m-d'))->where('doctor_id', auth()->user()->id)->where('status', 1)->get();
         return view('admin.prescription.index', compact('bookings'));
     }
     public function store(Request $request)
