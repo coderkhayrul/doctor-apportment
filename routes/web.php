@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\HomeController;
@@ -30,6 +31,9 @@ Route::get('new-appointment/{doctorId}/{date}', [FrontendController::class, 'sho
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // <!-- PROFILE ROUTE -->
 Route::middleware(['auth', 'patient'])->group(function () {
@@ -41,16 +45,6 @@ Route::middleware(['auth', 'patient'])->group(function () {
     Route::get('/my-prescription', [FrontendController::class, 'myprescription'])->name('my.prescription');
 });
 
-Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::resource('/doctor', DoctorController::class);
-    Route::get('/patient', [PatientListController::class, 'index'])->name('patient');
-    Route::get('/patients/all', [PatientListController::class, 'allTimeAppointment'])->name('all.appointment');
-    Route::get('/status/update/{id}', [PatientListController::class, 'toggleStatus'])->name('update.status');
-});
 
 Route::middleware(['auth', 'doctor'])->group(function () {
     Route::post('/appointment/check', [AppointmentController::class, 'appointmentCheck'])->name('appointment.check');
@@ -60,4 +54,14 @@ Route::middleware(['auth', 'doctor'])->group(function () {
     Route::post('/prescription', [PrescriptionController::class, 'store'])->name('prescription.store');
     Route::get('/prescription/{user_id}/{date}', [PrescriptionController::class, 'show'])->name('prescription.show');
     Route::get('/prescriped-patients', [PrescriptionController::class, 'patientFromPrescription'])->name('prescriped.patients');
+});
+
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::resource('/doctor', DoctorController::class);
+    Route::get('/patient', [PatientListController::class, 'index'])->name('patient');
+    Route::get('/patients/all', [PatientListController::class, 'allTimeAppointment'])->name('all.appointment');
+    Route::get('/status/update/{id}', [PatientListController::class, 'toggleStatus'])->name('update.status');
+
+    // Department Route List
+    Route::resource('/department', DepartmentController::class);
 });

@@ -72,7 +72,7 @@
                                 @endif
                                 <!-- PATIENTS END -->
                                 <!-- LOGOUT START -->
-                                <div class="nav-item active">
+                                <div class="nav-item">
                                     <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                                         href="{{ route('logout') }}"><i
                                         class="ik ik-power dropdown-icon"></i>
