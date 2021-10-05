@@ -53,8 +53,15 @@
                             <td>{{ $department->department }}</td>
                             <td>
                                 <div class="table-actions">
-                                    <a href="{{ route('doctor.edit', $department->id) }}"><i class="ik ik-edit-2"></i></a>
-                                    <a href="{{ route('doctor.show', $department->id) }}"><i class="ik ik-trash-2"></i></a>
+                                    <a href="{{ route('department.edit', $department->id) }}"><i class="ik ik-edit-2"></i></a>
+                                    <form action="{{ route('department.destroy', $department->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-primary btn-sm">
+                                            <i class="ik ik-trash-2"></i>
+                                        </button>
+                                        {{-- <a href="{{ route('department.show', $department->id) }}"></a> --}}
+                                    </form>
                                 </div>
                             </td>
                         </tr>
