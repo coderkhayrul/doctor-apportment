@@ -55,6 +55,7 @@ Route::middleware(['auth', 'doctor'])->group(function () {
     Route::post('/appointment/check', [AppointmentController::class, 'appointmentCheck'])->name('appointment.check');
     Route::post('/appointment/time/update', [AppointmentController::class, 'appointmentTimeUpdate'])->name('appointment.time.update');
     Route::resource('/appointment', AppointmentController::class);
-    Route::get('/patient-today', [PrescriptionController::class, 'index']);
+    Route::get('/patient-today', [PrescriptionController::class, 'index'])->name('patient.today');
     Route::post('/prescription', [PrescriptionController::class, 'store'])->name('prescription.store');
+    Route::get('/prescription/{user_id}/{date}', [PrescriptionController::class, 'show'])->name('prescription.show');
 });

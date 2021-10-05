@@ -22,4 +22,11 @@ class PrescriptionController extends Controller
 
         return redirect()->back()->with('message', 'Prescription Create Successfully');
     }
+
+    public function show($userId, $date)
+    {
+        $prescription = Prescription::Where('user_id', $userId)->where('date', $date)->first();
+
+        return view('admin.prescription.show', compact('prescription'));
+    }
 }

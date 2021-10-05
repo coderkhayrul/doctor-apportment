@@ -92,7 +92,7 @@
                                     @include('admin.prescription.form')
                                     <!-- Model Form End -->
                                 @else
-                                View
+                                <a href="{{ route('prescription.show',[$booking->user_id,$booking->date]) }}" class="btn btn-primary" >View</a>
                                 @endif
 
                             </td>

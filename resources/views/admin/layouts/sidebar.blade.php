@@ -59,6 +59,18 @@
                                 </div>
                                 @endif
                                 <!-- PATIENT APPOINTMET END -->
+                                <!-- PATIENTS START -->
+                                @if (Auth::check() && Auth::user()->role->name === 'doctor')
+                                <div class="nav-item has-sub">
+                                    <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Patients</span> <span
+                                            class="badge badge-danger"></span></a>
+                                    <div class="submenu-content">
+                                        <a href="{{ route('patient.today') }}" class="menu-item">Patients (today)</a>
+                                        <a href="{{ route('appointment.index') }}" class="menu-item">All Patients</a>
+                                    </div>
+                                </div>
+                                @endif
+                                <!-- PATIENTS END -->
                                 <!-- LOGOUT START -->
                                 <div class="nav-item active">
                                     <a onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
