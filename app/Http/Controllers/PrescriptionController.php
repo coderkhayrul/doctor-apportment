@@ -12,6 +12,7 @@ class PrescriptionController extends Controller
     {
         date_default_timezone_set('Asia/Dhaka');
         $bookings = Booking::where('date', date('Y-m-d'))->where('doctor_id', auth()->user()->id)->where('status', 1)->get();
+
         return view('admin.prescription.index', compact('bookings'));
     }
     public function store(Request $request)
@@ -28,5 +29,11 @@ class PrescriptionController extends Controller
         $prescription = Prescription::Where('user_id', $userId)->where('date', $date)->first();
 
         return view('admin.prescription.show', compact('prescription'));
+    }
+    // Get All Patients From Prescription
+    public function patientFromPrescription()
+    {
+        $patients = Prescription::get();
+        return view('admin.prescription.all', compact('patients'));
     }
 }

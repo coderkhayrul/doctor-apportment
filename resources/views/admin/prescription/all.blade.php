@@ -29,13 +29,13 @@
 
 <div class="row justify-content-center">
     <div class="col-md-12">
-        @if (Session::has('message'))
+        {{-- @if (Session::has('message'))
         <div class="alert alert-success" role="alert">
             {{ Session::get('message') }}
         </div>
-        @endif
+        @endif --}}
         <div class="card">
-            <div class="card-header">Your Appointments: {{ count($bookings) }}</div>
+            <div class="card-header">Your Appointments: {{ count($patients) }}</div>
 
             <div class="card-body">
                 <table class="table table-striped">
@@ -55,46 +55,34 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($bookings as $key => $booking)
+                        @forelse ($patients as $key => $patient)
                         <tr>
                             <th scope="row">{{ $key+1 }}</th>
                             <td>
-                                <img src="upload/{{ $booking->doctor->image }}" alt="" width="80"
+                                <img src="upload/{{ $patient->doctor->image }}" alt="" width="80"
                                     style="border-radius: 50%;">
                             </td>
                             {{-- <td>{{ $booking->date }}</td> --}}
-                            <td>{{ $booking->id }}</td>
-                            <td>{{ $booking->user->name }}</td>
-                            <td>{{ $booking->user->email }}</td>
-                            <td>{{ $booking->user->phone_number }}</td>
-                            <td>{{ $booking->user->gender }}</td>
-                            <td>{{ $booking->time}}</td>
-                            <td>{{ $booking->doctor->name }}</td>
+                            <td>{{ $patient->id }}</td>
+                            <td>{{ $patient->user->name }}</td>
+                            <td>{{ $patient->user->email }}</td>
+                            <td>{{ $patient->user->phone_number }}</td>
+                            <td>{{ $patient->user->gender }}</td>
+                            <td>{{ $patient->time}}</td>
+                            <td>{{ $patient->doctor->name }}</td>
                             <td>
-                                @if ($booking->status == 0)
-                                <a href="{{ route('update.status',$booking->id) }}">
+                                @if ($patient->status == 0)
+                                <a href="{{ route('update.status',$patient->id) }}">
                                     <button class="btn btn-primary">Pending</button>
                                 </a>
                                 @else
-                                <a href="{{ route('update.status',$booking->id) }}">
+                                <a href="{{ route('update.status',$patient->id) }}">
                                     <button class="btn btn-success">Checked</button>
                                 </a>
                                 @endif
                             </td>
                             <td>
-                                @if (!App\Models\Prescription::where('date', date('Y-m-d'))->where('doctor_id', Auth::user()->id)->where('user_id', $booking->user->id)->exists())
-                                    <!-- Button trigger modal -->
-                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                        data-target="#exampleModal{{ $booking->id }}">
-                                        Write Prescription
-                                    </button>
-                                    <!-- Model Form Start -->
-                                    @include('admin.prescription.form')
-                                    <!-- Model Form End -->
-                                @else
-                                <a href="{{ route('prescription.show',[$booking->user_id,$booking->date]) }}" class="btn btn-primary" >View Prescription</a>
-                                @endif
-
+                                <a href="{{ route('prescription.show',[$patient->user_id,$patient->date]) }}" class="btn btn-primary" >View Prescription</a>
                             </td>
                         </tr>
                         @empty

@@ -66,7 +66,7 @@
                                             class="badge badge-danger"></span></a>
                                     <div class="submenu-content">
                                         <a href="{{ route('patient.today') }}" class="menu-item">Patients (today)</a>
-                                        <a href="{{ route('appointment.index') }}" class="menu-item">All Patients</a>
+                                        <a href="{{ route('prescriped.patients') }}" class="menu-item">All Patients (prescription)</a>
                                     </div>
                                 </div>
                                 @endif

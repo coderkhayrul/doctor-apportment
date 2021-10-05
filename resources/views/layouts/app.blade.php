@@ -47,12 +47,21 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-
+                        <!-- MY BOOKING START -->
                         @if (Auth::check() && Auth::user()->role->name === 'patient')
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('my.booking') }}">{{ __('My Booking') }}</a>
                         </li>
                         @endif
+                        <!-- MY BOOKING END -->
+                        <!-- MY PRESCRIPTION START -->
+                        @if (Auth::check() && Auth::user()->role->name === 'patient')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('my.prescription') }}">{{ __('My Prescription') }}</a>
+                        </li>
+                        @endif
+                        <!-- MY PRESCRIPTION END -->
+
                         <!-- Authentication Links -->
                         @guest
                         @if (Route::has('login'))

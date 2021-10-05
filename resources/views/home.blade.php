@@ -8,7 +8,8 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
-                    <add-button></add-button>
+
+                    Your Are Login As <strong>{{ Auth::user()->name }}</strong>
                 </div>
             </div>
         </div>

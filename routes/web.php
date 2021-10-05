@@ -38,6 +38,7 @@ Route::middleware(['auth', 'patient'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
     Route::post('/profile-pic', [ProfileController::class, 'profilePic'])->name('profile.image');
+    Route::get('/my-prescription', [FrontendController::class, 'myprescription'])->name('my.prescription');
 });
 
 Auth::routes();
@@ -58,4 +59,5 @@ Route::middleware(['auth', 'doctor'])->group(function () {
     Route::get('/patient-today', [PrescriptionController::class, 'index'])->name('patient.today');
     Route::post('/prescription', [PrescriptionController::class, 'store'])->name('prescription.store');
     Route::get('/prescription/{user_id}/{date}', [PrescriptionController::class, 'show'])->name('prescription.show');
+    Route::get('/prescriped-patients', [PrescriptionController::class, 'patientFromPrescription'])->name('prescriped.patients');
 });
