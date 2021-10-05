@@ -20,7 +20,7 @@ class CreatePrescriptionsTable extends Migration
             $table->integer('user_id');
             $table->integer('doctor_id');
             $table->string('date');
-            $table->text('medicine'); // Medicine 1, Medicine 2
+            $table->text('medicien'); // Medicine 1, Medicine 2
             $table->text('procedure_to_use_medicine');
             $table->text('feedback');
             $table->text('signature');

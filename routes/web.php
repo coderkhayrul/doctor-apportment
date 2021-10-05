@@ -56,4 +56,5 @@ Route::middleware(['auth', 'doctor'])->group(function () {
     Route::post('/appointment/time/update', [AppointmentController::class, 'appointmentTimeUpdate'])->name('appointment.time.update');
     Route::resource('/appointment', AppointmentController::class);
     Route::get('/patient-today', [PrescriptionController::class, 'index']);
+    Route::post('/prescription', [PrescriptionController::class, 'store'])->name('prescription.store');
 });
