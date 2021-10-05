@@ -128,9 +128,12 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="department">Specialist</label>
-                                <input type="text" class="form-control @error('department') is-invalid @enderror"
-                                    id="department" placeholder="Department" name="department"
-                                    value="{{ old('department') }}">
+                                <select name="department" id="" class="form-control">
+                                    <option value="" disabled selected>Select Department</option>
+                                    @foreach (App\Models\Department::get() as $department)
+                                    <option value="{{ $department->department }}">{{ $department->department }}</option>
+                                    @endforeach
+                                </select>
                                 @error('department')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

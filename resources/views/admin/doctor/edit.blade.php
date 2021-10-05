@@ -131,9 +131,11 @@
                         <div class="col-lg-6">
                             <div class="form-group">
                                 <label for="department">Specialist</label>
-                                <input type="text" class="form-control @error('department') is-invalid @enderror"
-                                    id="department" placeholder="Department" name="department"
-                                    value="{{ $user->department }}">
+                                    <select name="department" id="" class="form-control">
+                                        @foreach (App\Models\Department::all() as $department)
+                                        <option {{ $user->department == $department->department ? ' selected' : '' }} value="{{ $department->department }}">{{ $department->department }}</option>
+                                        @endforeach
+                                    </select>
                                 @error('department')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

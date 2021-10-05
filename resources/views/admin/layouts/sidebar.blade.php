@@ -23,6 +23,18 @@
                                             class="ik ik-bar-chart-2"></i><span>Dashboard</span></a>
                                 </div>
                                 <!-- DASHBOARD END -->
+                                <!-- DEPARTMENT START -->
+                                @if (Auth::check() && Auth::user()->role->name === 'admin')
+                                <div class="nav-item has-sub">
+                                    <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Department</span> <span
+                                            class="badge badge-danger"></span></a>
+                                    <div class="submenu-content">
+                                        <a href="{{ route('department.create') }}" class="menu-item">Create</a>
+                                        <a href="{{ route('department.index') }}" class="menu-item">View</a>
+                                    </div>
+                                </div>
+                                @endif
+                                <!-- DEPARTMENT END -->
                                 <!-- DOCTORS START -->
                                 @if (Auth::check() && Auth::user()->role->name === 'admin')
                                 <div class="nav-item has-sub">
